@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->double('price')->default(0);
             $table->string('unit')->nullable();
-            $table->interger('status')->default(0);
+            $table->integer('status')->default(0);
             $table->string('id_category')->nullable();
             $table->timestamps();
         });

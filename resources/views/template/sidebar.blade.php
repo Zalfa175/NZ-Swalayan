@@ -46,7 +46,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-cash-register"></i>
               <p>
                 Transaksi
                 <i class="fas fa-angle-left right"></i>
@@ -71,7 +71,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 Customer
                 <i class="fas fa-angle-left right"></i>
@@ -96,7 +96,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-archive"></i>
               <p>
                 Barang
                 <i class="fas fa-angle-left right"></i>
@@ -121,7 +121,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-stream"></i>
               <p>
                 Kategori
                 <i class="fas fa-angle-left right"></i>
@@ -146,7 +146,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-user-tie"></i>
               <p>
                 User
                 <i class="fas fa-angle-left right"></i>

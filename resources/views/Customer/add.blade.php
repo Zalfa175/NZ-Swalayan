@@ -37,14 +37,44 @@
               <form>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">ID Customer</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <label for="id">Kode</label>
+                    <input type="text" class="form-control" name="id" placeholder="Kode">
                   </div>
+                  <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" class="form-control" name="name" placeholder="Nama">
+                  </div>
+                  <div class="form-group">
+                    <label for="address">Alamat</label>
+                    <input type="text" class="form-control" name="address" placeholder="Alamat">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputRounded0">Jenis Kelamin</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="radio1">
+                      <label class="form-check-label">Radio</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="radio1" checked="">
+                      <label class="form-check-label">Radio checked</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleSelectRounded0">Flat</label>
+                    <select class="custom-select rounded-0" id="exampleSelectRounded0">
+                      <option>Value 1</option>
+                      <option>Value 2</option>
+                      <option>Value 3</option>
+                    </select>
+                  </div>
+
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
               </form>
             </div>

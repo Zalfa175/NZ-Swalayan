@@ -20,6 +20,6 @@ class Customer extends Model
         'name',
         'status',
         'gender',
-        'address',
+        'adress',
     ];
 }

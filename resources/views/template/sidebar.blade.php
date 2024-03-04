@@ -130,13 +130,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/category/add" class="nav-link">
+                <a href="/categories/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/category" class="nav-link">
+                <a href="/categories" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lihat</p>
                 </a>

@@ -50,17 +50,17 @@
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->adress }}</td>
                             <td>{{ $item->gender == 1 ? 'Laki-laki' : 'Perempuan'}}</td>
-                            <td>{{ $item->status ==1 ? 'Aktif' : 'Tidak Aktif'}}</td>
+                            <td>{{ $item->status == 1 ? 'Aktif' : 'Tidak Aktif'}}</td>
                             <td>
                                 <div class="btn-group">
-                                  <form action="">
+                                  <a href="/customer/{{ $item->id }}">
                                     <button type="button" class="btn btn-warning"><i class="far fa-edit"></i></button>
-                                  </form>
+                                  </a>
 
-                                  <form action="/customer/{{ $item->id }}" method="GET">
+                                  <form action="/customer/{{ $item->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                    <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                   </form>
                                 </div>
                             </td>

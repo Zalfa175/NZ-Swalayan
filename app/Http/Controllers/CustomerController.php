@@ -43,7 +43,9 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+        return view('customer.add', [
+            'data' => $customer,
+        ]);
     }
 
     /**
@@ -59,7 +61,10 @@ class CustomerController extends Controller
      */
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
-        //
+        $customer->fill($request->all());
+        $customer->save();
+
+        return redirect('/customer');
     }
 
     /**

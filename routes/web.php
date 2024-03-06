@@ -8,6 +8,7 @@ use App\Http\Controllers\StuffController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,39 +20,49 @@ use App\Http\Controllers\DetailController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/login', function (){
-    return view('login');
-});
+Route::get('generateData', [AuthController::class, 'generateData']);
 
 Route::get('/', function () {
     return view('home');
+})->middleware('is.auth');
+
+Route::get('login', [AuthController::class, 'showLogin'])->middleware('is.not.auth');
+Route::post('login', [AuthController::class, 'actionLogin'])->middleware('is.not.auth');
+
+Route::middleware(['is.auth'])->group(function (){
+
+    Route::get('logout', [AuthController::class, 'actionLogout']);
+
+    Route::get('/transaction', [TransactionController::class, 'index']);
+    Route::get('/transaction/add', [TransactionController::class, 'create']);
+
+    Route::get('/users', [UserController::class, 'index']);
+    Route::get('/users/add', [UserController::class, 'create']);
+    Route::post('/users', [UserController::class, 'store']);
+    Route::get('/users/{user}', [UserController::class, 'show']);
+    Route::put('/users/{user}', [UserController::class, 'update']);
+    Route::delete('/users/{user}', [UserController::class, 'destroy']);
+
+    Route::get('/customer', [CustomerController::class, 'index']);
+    Route::get('/customer/add', [CustomerController::class, 'create']);
+    Route::post('/customer', [CustomerController::class, 'store']);
+    Route::get('/customer/{customer}', [CustomerController::class, 'show']);
+    Route::put('/customer/{customer}', [CustomerController::class, 'update']);
+    Route::delete('/customer/{customer}', [CustomerController::class, 'destroy']);
+
+    Route::get('/categories', [CategoryController::class, 'index']);
+    Route::get('/categories/add', [CategoryController::class, 'create']);
+    Route::post('/categories', [CategoryController::class, 'store']);
+    Route::get('/categories/{category}', [CategoryController::class, 'show']);
+    Route::put('/categories/{category}', [CategoryController::class, 'update']);
+    Route::delete('/categories/{category}', [CategoryController::class, 'destroy']);
+
+    Route::get('/stuffs', [StuffController::class, 'index']);
+    Route::get('/stuffs/add', [StuffController::class, 'create']);
+    Route::post('/stuffs', [StuffController::class, 'store']);
+    Route::get('/stuffs/{stuff}', [StuffController::class, 'show']);
+    Route::put('/stuffs/{stuff}', [StuffController::class, 'update']);
+    Route::delete('/stuffs/{stuff}', [StuffController::class, 'destroy']);
 });
 
-Route::get('/transaction', [TransactionController::class, 'index']);
-Route::get('/transaction/add', [TransactionController::class, 'create']);
-
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/user/add', [UserController::class, 'create']);
-
-Route::get('/customer', [CustomerController::class, 'index']);
-Route::get('/customer/add', [CustomerController::class, 'create']);
-Route::post('/customer', [CustomerController::class, 'store']);
-Route::get('/customer/{customer}', [CustomerController::class, 'show']);
-Route::put('/customer/{customer}', [CustomerController::class, 'update']);
-Route::delete('/customer/{customer}', [CustomerController::class, 'destroy']);
-
-Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/categories/add', [CategoryController::class, 'create']);
-Route::post('/categories', [CategoryController::class, 'store']);
-Route::get('/categories/{category}', [CategoryController::class, 'show']);
-Route::put('/categories/{category}', [CategoryController::class, 'update']);
-Route::delete('/categories/{category}', [CategoryController::class, 'destroy']);
-
-Route::get('/stuffs', [StuffController::class, 'index']);
-Route::get('/stuffs/add', [StuffController::class, 'create']);
-Route::post('/stuffs', [StuffController::class, 'store']);
-Route::get('/stuffs/{stuff}', [StuffController::class, 'show']);
-Route::put('/stuffs/{stuff}', [StuffController::class, 'update']);
-Route::delete('/stuffs/{stuff}', [StuffController::class, 'destroy']);
 

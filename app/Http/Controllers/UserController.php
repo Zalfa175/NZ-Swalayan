@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Requests\StoreStuffRequest;
+use App\Http\Requests\UpdateStuffRequest;
 
 class UserController extends Controller
 {
@@ -11,7 +14,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.list');
+        $users = User::all();
+
+        return view('user.list', [
+            'data' => $users,
+        ]);
     }
 
     /**
@@ -27,7 +34,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
+
+        return redirect('/users');
     }
 
     /**
@@ -35,7 +44,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('user.add', [
+            'data' => $user,
+        ]);
     }
 
     /**
@@ -51,7 +62,10 @@ class UserController extends Controller
      */
     public function update(User $request, User $user)
     {
-        //
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect('/users');
     }
 
     /**
@@ -59,6 +73,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect('/users');
     }
 }

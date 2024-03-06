@@ -9,12 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>KATEGORI</h1>
+            <h1>BARANG</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">Data Kategori</li>
+              <li class="breadcrumb-item active">Data Barang</li>
             </ol>
           </div>
         </div>
@@ -28,7 +28,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Kategori</h3>
+                <h3 class="card-title">Data Barang</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -37,6 +37,8 @@
                   <tr>
                     <th>Kode</th>
                     <th>Nama</th>
+                    <th>Harga</th>
+                    <th>Satuan</th>
                     <th>Status</th>
                     <th></th>
                   </tr>
@@ -46,14 +48,16 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->name }}</td>
+                            <td>{{ $item->price }}</td>
+                            <td>{{ $item->unit }}</td>
                             <td>{{ $item->status == 1 ? 'Tersedia' : 'Sold Out'}}</td>
                             <td>
                                 <div class="btn-group">
-                                  <a href="/categories/{{ $item->id }}">
+                                  <a href="/stuffs/{{ $item->id }}">
                                     <button type="button" class="btn btn-warning"><i class="far fa-edit"></i></button>
                                   </a>
 
-                                  <form action="/categories/{{ $item->id }}" method="POST">
+                                  <form action="/stuffs/{{ $item->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>

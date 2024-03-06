@@ -13,7 +13,7 @@
           <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Nabila Zalfa Anandita</a>
         </div>
       </div>
 
@@ -105,13 +105,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/stuff/add" class="nav-link">
+                <a href="/stuffs/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/stuff" class="nav-link">
+                <a href="/stuffs" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lihat</p>
                 </a>
@@ -155,13 +155,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/user/add" class="nav-link">
+                <a href="/users/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/user" class="nav-link">
+                <a href="/users" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lihat</p>
                 </a>

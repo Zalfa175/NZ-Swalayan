@@ -34,7 +34,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/stuffs/{{ @$data->id }}" method="POST">
+              <form action="/categories/{{ @$data->id }}" method="POST">
                 @if (@$data)
                     @method('PUT')
                 @endif
@@ -48,14 +48,6 @@
                   <div class="form-group">
                     <label for="name">Nama</label>
                     <input type="text" class="form-control" name="name" placeholder="Nama" value="{{ @$data->name }}">
-                  </div>
-                  <div class="form-group">
-                    <label for="price">Harga</label>
-                    <input type="double" class="form-control" name="price" placeholder="Harga" value="{{ @$data->price }}">
-                  </div>
-                  <div class="form-group">
-                    <label for="unit">Satuan</label>
-                    <input type="text" class="form-control" name="unit" placeholder="Satuan" value="{{ @$data->unit }}">
                   </div>
 
                   <div class="form-group">

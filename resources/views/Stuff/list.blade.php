@@ -1,6 +1,6 @@
 @extends('template.index')
 
-@section('title', "Kategori")
+@section('title', "Lihat Barang")
 
 @section('content')
 <div class="content-wrapper">
@@ -39,6 +39,7 @@
                     <th>Nama</th>
                     <th>Harga</th>
                     <th>Satuan</th>
+                    <th>Kategori</th>
                     <th>Status</th>
                     <th></th>
                   </tr>
@@ -50,6 +51,7 @@
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->price }}</td>
                             <td>{{ $item->unit }}</td>
+                            <td>{{ @$item->category->name }}</td>
                             <td>{{ $item->status == 1 ? 'Tersedia' : 'Sold Out'}}</td>
                             <td>
                                 <div class="btn-group">

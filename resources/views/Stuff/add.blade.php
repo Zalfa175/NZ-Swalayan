@@ -57,6 +57,15 @@
                     <label for="unit">Satuan</label>
                     <input type="text" class="form-control" name="unit" placeholder="Satuan" value="{{ @$data->unit }}">
                   </div>
+                  
+                  <div class="form-group">
+                    <label for="exampleSelectRounded0">Kategori</label>
+                    <select name="id_category"  class="custom-select rounded-0">
+                      @foreach ($categories as $item)
+                        <option value="{{ $item->id }}" {{ @$data->id_category == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
+                      @endforeach
+                    </select>
+                  </div>
 
                   <div class="form-group">
                     <label for="exampleSelectRounded0">Status</label>

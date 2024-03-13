@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stuff;
+use App\Models\Category;
 use App\Http\Requests\StoreStuffRequest;
 use App\Http\Requests\UpdateStuffRequest;
 
@@ -27,7 +28,11 @@ class StuffController extends Controller
      */
     public function create()
     {
-        return view('stuff.add');
+        $categories = Category::all();
+
+        return view('stuff.add', [
+            'categories'=>$categories,
+        ]);
     }
 
     /**

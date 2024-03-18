@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Customer;
 use App\Models\User;
-use App\Http\Requests\StoreStuffRequest;
-use App\Http\Requests\UpdateStuffRequest;
+
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -34,9 +35,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $path = $request->file('file')->store('avatar');
+
+        $request->merge(['avatar' => $path]);
         User::create($request->all());
 
-        return redirect('/users');
+        return redirect('/users')->with([
+            'mess' => 'Data Berhasil Disimpan',
+        ]);
     }
 
     /**
@@ -65,7 +71,9 @@ class UserController extends Controller
         $user->fill($request->all());
         $user->save();
 
-        return redirect('/users');
+        return redirect('/users')->with([
+            'mess' => 'Data Berhasil Diupdate',
+        ]);
     }
 
     /**
@@ -73,8 +81,12 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        Storage::delete($user->avatar);
+
         $user->delete();
 
-        return redirect('/users');
+        return redirect('/users')->with([
+            'mess' => 'Data Berhasil Dihapus',
+        ]);
     }
 }

@@ -23,6 +23,7 @@ class Transaction extends Model
         'nota',
         'id_user',
         'id_customer',
+        'pembeli',
         'date',
     ];
 

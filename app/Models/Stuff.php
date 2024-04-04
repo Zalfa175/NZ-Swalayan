@@ -27,8 +27,8 @@ class Stuff extends Model
         'name',
         'price',
         'unit',
-        'status',
         'image',
+        'status',
         'id_category',
     ];
 

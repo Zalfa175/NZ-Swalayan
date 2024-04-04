@@ -21,55 +21,75 @@
       </div><!-- /.container-fluid -->
     </section>
 
+    
+    <form action="/users/{{ @$data->id }}" method="POST" enctype="multipart/form-data">
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-12">
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form action="/users/{{ @$data->id }}" method="POST">
-                @if (@$data)
-                    @method('PUT')
-                @endif
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
 
-                @csrf
+            <div class="col-md-4">
+              <div class="card card-primary">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="id">Kode</label>
-                    <input type="text" class="form-control" name="id" placeholder="Kode" value="{{ @$data->id }}">
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Nama</label>
-                    <input type="text" class="form-control" name="name" placeholder="Nama" value="{{ @$data->name }}">
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Email" value="{{ @$data->email }}">
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password" value="{{ @$data->password }}">
+                    <input type="file" id="file" name="file">
                   </div>
                 </div>
+              </div>
+            </div>
+
+          <!-- left column -->
+            <div class="col-md-8">
+            <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Input User</h3>
+                </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+                  @if (@$data)
+                      @method('PUT')
+                  @endif
+
+                  @csrf
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="name">Nama</label>
+                      <input type="text" class="form-control" name="name" placeholder="Nama" value="{{ @$data->name }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" name="email" placeholder="Email" value="{{ @$data->email }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" name="password" placeholder="Password" value="{{ @$data->password }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="level">Level</label>
+                      <select name="level" class="custom-select rounded-0">
+                        <option value="2" {{ @$data->level == 2 ? 'selected' : '' }}>Admin
+                        </option>
+                        <option value="1" {{ @$data->level == 1 ? 'selected' : '' }}>Kasir
+                        </option>
+                        <option value="0" {{ @$data->level == 0 ? 'selected' : '' }}>Blokir
+                        </option>
+                      </select>
+                    </div>
+                  </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
-              </form>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                  </div>
+              </div>
             </div>
           </div>
-        </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
+        </div><!-- /.container-fluid -->
+      </section>
+    
+    </form>
     <!-- /.content -->
   </div>
 @endsection

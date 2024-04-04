@@ -1,6 +1,6 @@
 @extends('template.index')
 
-@section('title', "Kategori")
+@section('title', "Data Kategori")
 
 @section('content')
 <div class="content-wrapper">
@@ -87,8 +87,6 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-
-            
             <!-- /.card -->
           </div>
           <!-- /.col -->

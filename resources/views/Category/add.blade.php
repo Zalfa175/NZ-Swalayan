@@ -1,6 +1,6 @@
 @extends('template.index')
 
-@section('title', "Tambah Barang")
+@section('title', "Tambah Kategori")
 
 @section('content')
 <div class="content-wrapper">
@@ -9,32 +9,31 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>General Form</h1>
+            <h1>KATEGORI</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">General Form</li>
+              <li class="breadcrumb-item active">Data Kategori</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
+    
+    <form action="/categories/{{ @$data->id }}" method="POST">
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-12">
+      <section class="content">
+        <div class="container-fluid">
+
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
+                <h3 class="card-title">Input Kategori</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/categories/{{ @$data->id }}" method="POST">
                 @if (@$data)
                     @method('PUT')
                 @endif
@@ -57,20 +56,17 @@
                       <option value="0" {{ @$data->status == 0 ? 'selected' : '' }}>Sold Out</option>
                     </select>
                   </div>
-
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
-              </form>
             </div>
-          </div>
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
+        </div><!-- /.container-fluid -->
+      </section>
+    
+    </form>
     <!-- /.content -->
   </div>
 @endsection

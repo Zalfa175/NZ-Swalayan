@@ -43,12 +43,12 @@ Route::middleware(['is.auth'])->group(function (){
     Route::put('/users/{user}', [UserController::class, 'update']);
     Route::delete('/users/{user}', [UserController::class, 'destroy']);
 
-    Route::get('/customer', [CustomerController::class, 'index']);
-    Route::get('/customer/add', [CustomerController::class, 'create']);
-    Route::post('/customer', [CustomerController::class, 'store']);
-    Route::get('/customer/{customer}', [CustomerController::class, 'show']);
-    Route::put('/customer/{customer}', [CustomerController::class, 'update']);
-    Route::delete('/customer/{customer}', [CustomerController::class, 'destroy']);
+    Route::get('/customers', [CustomerController::class, 'index']);
+    Route::get('/customers/add', [CustomerController::class, 'create']);
+    Route::post('/customers', [CustomerController::class, 'store']);
+    Route::get('/customers/{customer}', [CustomerController::class, 'show']);
+    Route::put('/customers/{customer}', [CustomerController::class, 'update']);
+    Route::delete('/customers/{customer}', [CustomerController::class, 'destroy']);
 
     Route::get('/categories', [CategoryController::class, 'index']);
     Route::get('/categories/add', [CategoryController::class, 'create']);

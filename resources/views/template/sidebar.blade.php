@@ -80,13 +80,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/customer/add" class="nav-link">
+                <a href="/customers/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/customer" class="nav-link">
+                <a href="/customers" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lihat</p>
                 </a>

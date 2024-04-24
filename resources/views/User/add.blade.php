@@ -54,6 +54,10 @@
                   @csrf
                   <div class="card-body">
                     <div class="form-group">
+                      <label for="id">Kode</label>
+                      <input type="text" class="form-control" name="id" placeholder="Kode" value="{{ @$data->id }}">
+                    </div>
+                    <div class="form-group">
                       <label for="name">Nama</label>
                       <input type="text" class="form-control" name="name" placeholder="Nama" value="{{ @$data->name }}">
                     </div>

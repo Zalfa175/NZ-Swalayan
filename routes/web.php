@@ -33,8 +33,8 @@ Route::middleware(['is.auth'])->group(function (){
 
     Route::get('logout', [AuthController::class, 'actionLogout']);
 
-    Route::get('/transaction', [TransactionController::class, 'index']);
-    Route::get('/transaction/add', [TransactionController::class, 'create']);
+    Route::get('/transactions', [TransactionController::class, 'index']);
+    Route::get('/transactions/create', [TransactionController::class, 'create']);
 
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/users/add', [UserController::class, 'create']);
@@ -63,6 +63,6 @@ Route::middleware(['is.auth'])->group(function (){
     Route::get('/stuffs/{stuff}', [StuffController::class, 'show']);
     Route::put('/stuffs/{stuff}', [StuffController::class, 'update']);
     Route::delete('/stuffs/{stuff}', [StuffController::class, 'destroy']);
-});
 
+});
 

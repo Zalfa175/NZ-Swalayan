@@ -33,6 +33,7 @@ class CustomerController extends Controller
      */
     public function store(StoreCustomerRequest $request)
     {
+        // dd($request);
         Customer::create($request->all());
 
         return redirect('/customers')->with([

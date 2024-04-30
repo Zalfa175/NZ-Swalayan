@@ -55,13 +55,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/transaction/add" class="nav-link">
+                <a href="/transactions/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/transaction" class="nav-link">
+                <a href="/transactions" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lihat</p>
                 </a>
@@ -80,7 +80,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/customers/add" class="nav-link">
+                <a href="/customers/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>
@@ -105,7 +105,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/stuffs/add" class="nav-link">
+                <a href="/stuffs/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>
@@ -130,7 +130,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/categories/add" class="nav-link">
+                <a href="/categories/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>
@@ -155,7 +155,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/users/add" class="nav-link">
+                <a href="/users/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah</p>
                 </a>

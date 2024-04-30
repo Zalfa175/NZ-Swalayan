@@ -23,7 +23,6 @@ class StoreCustomerRequest extends FormRequest
     {
         return [
             'id' => 'required',
-            'name' => 'required|min:10|max:100',
         ];
     }
 }
